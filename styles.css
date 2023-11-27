@@ -1,0 +1,97 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #3498db; /* Blue background */
+    color: #ffffff; /* White text color */
+    font-family: "Arial", sans-serif;
+}
+
+h1 {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+}
+
+h2 {
+    font-family: "Times New Roman", serif;
+    font-weight: bold;
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+button,
+input[type="text"] {
+    background-color: #ffffff; /* White background for buttons and text inputs */
+    color: #3498db; /* Blue text color for buttons and text inputs */ /*#3498db*/
+    border: none;
+    padding: 10px;
+    margin: 5px;
+    font-family: "Verdana", sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0055a4; /* Darker blue background on hover */
+}
+
+.scoreboard {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #3498db; /* Blue background for the scoreboard */
+    color: #ffffff;
+    padding: 20px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.team {
+    text-align: center;
+    margin: 0 20px;
+    max-width: 200px; /* Adjust the value to your desired width */
+    width: 100%;
+}
+
+.score {
+    font-size: 36px;
+}
+
+.scoreButton {
+    font-size: 24px;
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.team-names {
+    text-align: center;
+    margin: 20px;
+}
+
+.label {
+    font-family: "Arial", sans-serif;
+    font-size: 18px;
+}
+
+/* Center the "Generate Random Weight Class" button */
+#generateButton {
+    display: block;
+    margin: 0 auto;
+    text-align: center; /* Center the text within the button */
+    background-color: #3498db;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-family: "Verdana", sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#generateButton:hover {
+    background-color: #0055a4; /* Darker blue background on hover */
+}
+
+#result {
+    text-align: center;
+}

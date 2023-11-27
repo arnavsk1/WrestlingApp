@@ -1,0 +1,56 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.scoreboard {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px;
+}
+
+.team {
+    text-align: center;
+}
+
+.score {
+    font-size: 36px;
+}
+
+.scoreButton {
+    font-size: 24px;
+    padding: 5px 15px;
+    margin-top: 10px;
+}
+/* Smaller screens, adjust font sizes and padding */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 24px;
+        padding: 10px;
+    }
+
+    h2 {
+        font-size: 18px;
+        margin: 5px 0;
+    }
+
+    button, input[type="text"] {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}
+
+/* Further adjustments for even smaller screens */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 20px;
+    }
+
+    h2 {
+        font-size: 16px;
+    }
+
+    button, input[type="text"] {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+}

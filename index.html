@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Weight Class Generator and Team Scoreboard</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="scoreboard.css">
+</head>
+<body>
+    <h1>Weight Class Generator</h1>
+    <button id="generateButton">Generate Random Weight Class</button>
+    <div id="result"></div>
+
+    <h1>Team Scoreboard</h1>
+    <div class="scoreboard">
+        <div class="team">
+            <h2 id="teamA">Team A</h2>
+            <span class="score" id="teamAScore">0</span>
+            <button class="scoreButton" data-score="teamAScore">+1</button>
+        </div>
+        <div class="team">
+            <h2 id="teamB">Team B</h2>
+            <span class="score" id="teamBScore">0</span>
+            <button class="scoreButton" data-score="teamBScore">+1</button>
+        </div>
+    </div>
+    <div class="team-names">
+        <div>
+            <label for="teamAName">Team A Name:</label>
+            <input type="text" id="teamAName" placeholder="Team A">
+        </div>
+        <div>
+            <label for="teamBName">Team B Name:</label>
+            <input type="text" id="teamBName" placeholder="Team B">
+        </div>
+        <button id="updateNamesButton">Update Team Names</button>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
