@@ -28,6 +28,15 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
+    // Reset Scores
+    const resetButton = document.getElementById("resetButton");
+    resetButton.addEventListener("click", function() {
+        const scoreElements = document.querySelectorAll(".score");
+        scoreElements.forEach(scoreElement => {
+            scoreElement.textContent = "0";
+        });
+    });
+
     // Weight Class Generator
     const weightClass = ["101", "108", "116", "124", "131", "138", "145", "152", "160", "170", "190", "215", "285"];
 
@@ -43,3 +52,4 @@ document.addEventListener("DOMContentLoaded", function() {
 
     generateButton.addEventListener("click", generateRandomNumber);
 });
+
