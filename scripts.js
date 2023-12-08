@@ -1,49 +1,46 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const teamANameInput = document.getElementById("teamAName");
     const teamBNameInput = document.getElementById("teamBName");
     const teamA = document.getElementById("teamA");
     const teamB = document.getElementById("teamB");
 
-    // Function to update team names
     function updateTeamNames() {
         teamA.textContent = teamANameInput.value || "Home";
         teamB.textContent = teamBNameInput.value || "Away";
     }
 
     const updateNamesButton = document.getElementById("updateNamesButton");
-    updateNamesButton.addEventListener("click", function() {
-        console.log("Update Team Names button clicked");  // Log to check if the button click is detected
+    updateNamesButton.addEventListener("click", function () {
+        console.log("Update Team Names button clicked");
         updateTeamNames();
     });
 
-    // Function to increment scores
-    function incrementScore(scoreId) {
+    function incrementScore(scoreId, value) {
         const scoreElement = document.getElementById(scoreId);
         const currentScore = parseInt(scoreElement.textContent);
-        scoreElement.textContent = currentScore + 1;
+        scoreElement.textContent = currentScore + value;
     }
 
     const scoreButtons = document.querySelectorAll(".scoreButton");
     scoreButtons.forEach(button => {
-        button.addEventListener("click", function() {
-            console.log("Score button clicked");  // Log to check if the button click is detected
+        button.addEventListener("click", function () {
+            console.log("Score button clicked");
             const scoreId = button.getAttribute("data-score");
-            incrementScore(scoreId);
+            const value = parseInt(button.getAttribute("data-value"));
+            incrementScore(scoreId, value);
         });
     });
 
-    // Reset Scores
     const resetButton = document.getElementById("resetButton");
-    resetButton.addEventListener("click", function() {
-        console.log("Reset button clicked");  // Log to check if the button click is detected
+    resetButton.addEventListener("click", function () {
+        console.log("Reset button clicked");
         const scoreElements = document.querySelectorAll(".score");
         scoreElements.forEach(scoreElement => {
-            console.log(scoreElement.textContent);  // Log current score before resetting
+            console.log(scoreElement.textContent);
             scoreElement.textContent = "0";
         });
     });
 
-    // Weight Class Generator
     const weightClass = ["101", "108", "116", "124", "131", "138", "145", "152", "160", "170", "190", "215", "285"];
 
     const generateButton = document.getElementById("generateButton");
@@ -53,11 +50,11 @@ document.addEventListener("DOMContentLoaded", function() {
         const min = 0;
         const max = 12;
         const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
-        result.textContent =  `The starting weight class today is: ${weightClass[randomNumber]}`;
+        result.textContent = `The starting weight class today is: ${weightClass[randomNumber]}`;
     }
 
-    generateButton.addEventListener("click", function() {
-        console.log("Generate button clicked");  // Log to check if the button click is detected
+    generateButton.addEventListener("click", function () {
+        console.log("Generate button clicked");
         generateRandomNumber();
     });
 });
