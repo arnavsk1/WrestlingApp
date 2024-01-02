@@ -95,3 +95,9 @@ button:hover {
 #result {
   text-align: center;
 }
+/* Add these styles to your CSS file */
+#weightClassDisplay {
+  font-size: 18px; /* Adjust the font size as needed */
+  font-weight: bold; /* Set the font weight to bold */
+  margin-top: 10px; /* Add margin for spacing */
+}
