@@ -1,3 +1,4 @@
+// making team names and such
 document.addEventListener("DOMContentLoaded", function () {
     const teamANameInput = document.getElementById("teamAName");
     const teamBNameInput = document.getElementById("teamBName");
@@ -14,6 +15,8 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log("Update Team Names button clicked");
         updateTeamNames();
     });
+
+    // scores and such 
 
     function incrementScore(scoreId, value) {
         const scoreElement = document.getElementById(scoreId);
@@ -40,6 +43,8 @@ document.addEventListener("DOMContentLoaded", function () {
             scoreElement.textContent = "0";
         });
     });
+
+    // weightclasses and such
 
     const weightClass = ["101", "108", "116", "124", "131", "138", "145", "152", "160", "170", "190", "215", "285"];
 
