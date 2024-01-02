@@ -58,6 +58,10 @@ document.addEventListener("DOMContentLoaded", function () {
         result.textContent = `The starting weight class today is: ${weightClass[randomNumber]}`;
     }
 
+    document.addEventListener("DOMContentLoaded", function () {
+       
+    });
+    
     generateButton.addEventListener("click", function () {
         console.log("Generate button clicked");
         generateRandomNumber();
