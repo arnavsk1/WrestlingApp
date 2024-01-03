@@ -15,6 +15,23 @@ document.addEventListener("DOMContentLoaded", function () {
         updateTeamNames();
     });
 
+    // Function to increment score
+    function incrementScore(scoreId, value) {
+        const scoreElement = document.getElementById(scoreId);
+        const currentScore = parseInt(scoreElement.textContent);
+        scoreElement.textContent = currentScore + value;
+    }
+
+    // Event listener for score buttons
+    document.querySelectorAll(".scoreButton").forEach(button => {
+        button.addEventListener("click", function () {
+            console.log("Score button clicked");
+            const scoreId = button.getAttribute("data-score");
+            const value = parseInt(button.getAttribute("data-value"));
+            incrementScore(scoreId, value);
+        });
+    });
+
     // ... (rest of your code)
 
     // Function to get data for CSV
@@ -24,14 +41,11 @@ document.addEventListener("DOMContentLoaded", function () {
         const teamAScore = document.getElementById("teamAScore").textContent;
         const teamBScore = document.getElementById("teamBScore").textContent;
 
-        // Add more data as needed
-
         return {
             teamAName,
             teamBName,
             teamAScore,
             teamBScore,
-            // Add more properties as needed
         };
     }
 
