@@ -21,12 +21,16 @@ document.addEventListener("DOMContentLoaded", function () {
     function getDataForCSV() {
         const teamAName = teamA.textContent;
         const teamBName = teamB.textContent;
+        const teamAScore = document.getElementById("teamAScore").textContent;
+        const teamBScore = document.getElementById("teamBScore").textContent;
 
         // Add more data as needed
 
         return {
             teamAName,
             teamBName,
+            teamAScore,
+            teamBScore,
             // Add more properties as needed
         };
     }
