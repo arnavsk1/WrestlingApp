@@ -32,7 +32,22 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // ... (rest of your code)
+    // Function to generate random weight class
+    const generateButton = document.getElementById("generateButton");
+    const result = document.getElementById("result");
+
+    function generateRandomNumber() {
+        const weightClass = ["101", "108", "116", "124", "131", "138", "145", "152", "160", "170", "190", "215", "285"];
+        const min = 0;
+        const max = 12;
+        const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+        result.textContent = `The starting weight class today is: ${weightClass[randomNumber]}`;
+    }
+
+    generateButton.addEventListener("click", function () {
+        console.log("Generate button clicked");
+        generateRandomNumber();
+    });
 
     // Function to get data for CSV
     function getDataForCSV() {
@@ -46,6 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
             teamBName,
             teamAScore,
             teamBScore,
+            // Add more properties as needed
         };
     }
 
