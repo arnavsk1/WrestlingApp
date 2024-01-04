@@ -1,3 +1,5 @@
+// yourscript.js
+
 document.addEventListener("DOMContentLoaded", function () {
     const teamANameInput = document.getElementById("teamAName");
     const teamBNameInput = document.getElementById("teamBName");
@@ -49,6 +51,48 @@ document.addEventListener("DOMContentLoaded", function () {
         generateRandomNumber();
     });
 
+    // Updated Function to download CSV
+    function downloadCSV(data, filename) {
+        const csvContent = `data:text/csv;charset=utf-8,${encodeURIComponent(data)}`;
+        const blob = new Blob([csvContent], { type: "text/csv" });
+
+        const link = document.createElement("a");
+
+        // Check if the file already exists in local storage
+        const existingData = localStorage.getItem("team_data.csv");
+
+        if (existingData) {
+            // If it exists, append the new data to the existing data
+            const reader = new FileReader();
+
+            reader.onload = function (e) {
+                const combinedData = e.target.result + "\n" + csvContent;
+                const newBlob = new Blob([combinedData], { type: "text/csv" });
+
+                link.href = URL.createObjectURL(newBlob);
+                link.download = filename;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+
+                // Update the data in local storage
+                localStorage.setItem("team_data.csv", combinedData);
+            };
+
+            reader.readAsText(blob);
+        } else {
+            // If the file doesn't exist, create a new one
+            link.href = URL.createObjectURL(blob);
+            link.download = filename;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+
+            // Save the data in local storage
+            localStorage.setItem("team_data.csv", csvContent);
+        }
+    }
+
     // Function to get data for CSV
     function getDataForCSV() {
         const teamAName = teamA.textContent;
@@ -75,14 +119,88 @@ document.addEventListener("DOMContentLoaded", function () {
     // Function to download CSV
     function downloadCSV(data, filename) {
         const csvContent = `data:text/csv;charset=utf-8,${encodeURIComponent(data)}`;
+        const blob = new Blob([csvContent], { type: "text/csv" });
+
         const link = document.createElement("a");
-        link.setAttribute("href", csvContent);
-        link.setAttribute("download", filename);
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
+
+        // Check if the file already exists in local storage
+        const existingData = localStorage.getItem("team_data.csv");
+
+        if (existingData) {
+            // If it exists, append the new data to the existing data
+            const reader = new FileReader();
+
+            reader.onload = function (e) {
+                const combinedData = e.target.result + "\n" + csvContent;
+                const newBlob = new Blob([combinedData], { type: "text/csv" });
+
+                link.href = URL.createObjectURL(newBlob);
+                link.download = filename;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+
+                // Update the data in local storage
+                localStorage.setItem("team_data.csv", combinedData);
+            };
+
+            reader.readAsText(blob);
+        } else {
+            // If the file doesn't exist, create a new one
+            link.href = URL.createObjectURL(blob);
+            link.download = filename;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+
+            // Save the data in local storage
+            localStorage.setItem("team_data.csv", csvContent);
+        }
     }
 
+    // Function to download CSV
+    function downloadCSV(data, filename) {
+        const csvContent = `data:text/csv;charset=utf-8,${encodeURIComponent(data)}`;
+        const blob = new Blob([csvContent], { type: "text/csv" });
+
+        const link = document.createElement("a");
+
+        // Check if the file already exists in local storage
+        const existingData = localStorage.getItem("team_data.csv");
+
+        if (existingData) {
+            // If it exists, append the new data to the existing data
+            const reader = new FileReader();
+
+            reader.onload = function (e) {
+                const combinedData = e.target.result + "\n" + csvContent;
+                const newBlob = new Blob([combinedData], { type: "text/csv" });
+
+                link.href = URL.createObjectURL(newBlob);
+                link.download = filename;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+
+                // Update the data in local storage
+                localStorage.setItem("team_data.csv", combinedData);
+            };
+
+            reader.readAsText(blob);
+        } else {
+            // If the file doesn't exist, create a new one
+            link.href = URL.createObjectURL(blob);
+            link.download = filename;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+
+            // Save the data in local storage
+            localStorage.setItem("team_data.csv", csvContent);
+        }
+    }
+
+    // Event listener for download button
     const downloadButton = document.getElementById("downloadButton");
     downloadButton.addEventListener("click", function () {
         console.log("Download CSV button clicked");
